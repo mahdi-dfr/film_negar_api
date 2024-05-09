@@ -48,7 +48,8 @@ class Movie(models.Model):
     year = models.CharField(max_length=4, verbose_name='سال تولید', null=True, blank=True)
     baner = models.TextField(verbose_name='پوستر فیلم', null=True, blank=True)
     tizer = models.TextField(verbose_name='تیزر فیلم', null=True, blank=True)
-    genre = models.ManyToManyField(Genre, verbose_name='ژانر', related_name='movie_genre', )
+    genre = models.ForeignKey(Genre, verbose_name='ژانر', related_name='movie_genre', on_delete=models.SET_NULL,
+                              null=True, blank=True)
     box_office = models.CharField(max_length=100, verbose_name='باکس افیس', null=True, blank=True)
     prices = models.TextField(verbose_name='جوایز و افتخارات', null=True, blank=True)
     users_rate = models.CharField(max_length=6, null=True, blank=True, verbose_name='امتیاز کاربران')

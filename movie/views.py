@@ -16,7 +16,8 @@ class AllMoviesView(ModelViewSet):
     def get_queryset(self):
         genre = self.request.query_params.get('genre')
         if genre:
-            return Movie.objects.filter(genre=genre)
+            genre_id = Genre.objects.get(name=genre)
+            return Movie.objects.filter(genre=genre_id)
 
         return super().get_queryset()
 
