@@ -46,7 +46,8 @@ class Movie(models.Model):
     tag = models.CharField(max_length=255, null=True, blank=True, verbose_name='تگ')
     imdb_rate = models.CharField(max_length=3, verbose_name='امتیاز IMDB')
     year = models.CharField(max_length=4, verbose_name='سال تولید', null=True, blank=True)
-    baner = models.TextField(verbose_name='پوستر فیلم', null=True, blank=True)
+    baner = models.TextField(verbose_name='بنر فیلم', null=True, blank=True)
+    poster = models.TextField(verbose_name='پوستر فیلم', null=True, blank=True)
     tizer = models.TextField(verbose_name='تیزر فیلم', null=True, blank=True)
     genre = models.ForeignKey(Genre, verbose_name='ژانر', related_name='movie_genre', on_delete=models.SET_NULL,
                               null=True, blank=True)
