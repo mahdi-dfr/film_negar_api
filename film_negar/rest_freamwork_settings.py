@@ -4,6 +4,12 @@ import os
 
 def build_django_rest_framework(your_settings=None):
     REST_FRAMEWORK = {
+
+        'DEFAULT_AUTHENTICATION_CLASSES': (
+
+            'rest_framework_simplejwt.authentication.JWTAuthentication',
+        ),
+
         'DEFAULT_PERMISSION_CLASSES': [
             'rest_framework.permissions.AllowAny',
         ],
