@@ -13,6 +13,7 @@ class AllMoviesView(ModelViewSet):
     queryset = Movie.objects.all().order_by('id')
     filterset_fields = ['original_name', 'persian_name']
 
+
     def get_queryset(self):
         genre = self.request.query_params.get('genre')
         if genre:

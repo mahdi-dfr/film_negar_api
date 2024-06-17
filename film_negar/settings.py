@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_spectacular',
+    'django_filters',
     'rest_framework',
     'user',
     'movie',
@@ -78,12 +78,21 @@ WSGI_APPLICATION = 'film_negar.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'filmnegar',
+    #     'USER': 'postgres',
+    #     'PASSWORD': '123456789',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'filmnegar',
+        'NAME': 'filmnegaopk_db',
         'USER': 'postgres',
-        'PASSWORD': '123456789',
-        'HOST': 'localhost',
+        'PASSWORD': 'zKnYwg77Ekf4aLWHnOfd',
+        'HOST': 'filmnegardb-wip-service',
         'PORT': '5432',
     }
 }
