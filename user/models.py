@@ -15,6 +15,7 @@ class User(AbstractUser):
         ('0', 'ادمین'),
         ('1', 'کاربر عادی'),
     ]
+    
     role = models.CharField(max_length=1, choices=ROLE, default='1')
     mobile_number = models.CharField(max_length=11, verbose_name='شماره موبایل', null=False, blank=False, unique=True,
                                      validators=[mobile_validator])
