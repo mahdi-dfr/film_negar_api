@@ -7,6 +7,7 @@ class AllMoviesSerializer(ModelSerializer):
     class Meta:
         model = Movie
         fields = "__all__"
+        depth = 2
 
 
 class ActorSerializer(ModelSerializer):
@@ -27,6 +28,5 @@ class BannerSerializer(ModelSerializer):
     class Meta:
         model = Banner
         fields = "__all__"
-        depth = 2
 
 

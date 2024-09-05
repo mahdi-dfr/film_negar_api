@@ -13,17 +13,19 @@ import os
 from pathlib import Path
 import dotenv
 from django.utils.translation import gettext_lazy as _
+import dj_database_url
 
 from film_negar.rest_freamwork_settings import build_django_rest_framework
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+dotenv.load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "django-insecure-hcfq-3s=(d$m$=(it4gc7aqj!y_xa4bmnqh4i_p*__dei4rtap"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://midal.runflare.run',
+    'https://filmnegar.liara.run/',
 ]
 
 # Application definition
@@ -84,22 +86,17 @@ WSGI_APPLICATION = 'film_negar.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'filmnegar',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '123456789',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
+    # 'default': dj_database_url.config(default=os.environ.get('postgresql://root:bpVZCt6BNfLfsqLFEYuwHqLH@postgres:5432/postgres'))
+
+
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_NAME'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASS'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
+        'NAME': 'filmnegaxre_db',
+        'USER': 'postgres',
+        'PASSWORD': 'cWc2XP1YOasWkonj1wJp',
+        'HOST': 'filmnegar-naw-service',
+        'PORT': 5432,
     }
 }
 
